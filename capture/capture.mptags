@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+Init_LCD	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	35;"	p	line:35	signature:(void)
+Init_LCD	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	60;"	f	line:60	signature:(void)
+Init_PORTS	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	34;"	p	line:34	signature:(void)
+Init_PORTS	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	50;"	f	line:50	signature:(void)
+LCD_4b2l::0x28	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	27;"	d	line:27
+LCD_CMD	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	37;"	p	line:37	signature:(unsigned char cmd)
+LCD_CMD	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	80;"	f	line:80	signature:(unsigned char cmd)
+LCD_D4::LATDbits.LATD3	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	12;"	d	line:12
+LCD_D5::LATDbits.LATD4	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	13;"	d	line:13
+LCD_D6::LATDbits.LATD5	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	14;"	d	line:14
+LCD_D7::LATDbits.LATD6	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	15;"	d	line:15
+LCD_DATA	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	38;"	p	line:38	signature:(unsigned char dat)
+LCD_DATA	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	99;"	f	line:99	signature:(unsigned char dat)
+LCD_E::LATDbits.LATD2	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	10;"	d	line:10
+LCD_IN_FLOAT	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	188;"	f	line:188	signature:( float d)
+LCD_IN_FLOAT	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	43;"	p	line:43	signature:( float d)
+LCD_IN_INTER	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	143;"	f	line:143	signature:(unsigned int d)
+LCD_IN_INTER	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	42;"	p	line:42	signature:(unsigned int d)
+LCD_OK	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	36;"	p	line:36	signature:(void)
+LCD_OK	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	73;"	f	line:73	signature:(void)
+LCD_RS::LATDbits.LATD0	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	8;"	d	line:8
+LCD_RW::LATDbits.LATD1	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	9;"	d	line:9
+LCD_clear::0x01	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	19;"	d	line:19
+LCD_home::0x02	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	20;"	d	line:20
+LCD_homeL1::0x80	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	28;"	d	line:28
+LCD_homeL2::0xC0	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	29;"	d	line:29
+LCD_normal::0x06	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	21;"	d	line:21
+LCD_normal_s::0x07	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	22;"	d	line:22
+LCD_off::0x08	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	23;"	d	line:23
+LCD_on::0x0C	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	24;"	d	line:24
+LCD_on_blink::0x0F	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	26;"	d	line:26
+LCD_on_crsr::0x0E	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	25;"	d	line:25
+__LCD_H	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	2;"	d	line:2
+a	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	159;"	l	line:159
+address	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	136;"	l	line:136
+b	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	159;"	l	line:159
+c	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	159;"	l	line:159
+capture_mode1	C:\Users\KHANH\Desktop\capture\capture.c	59;"	p	line:59	file:	signature:(void)
+capture_mode1	C:\Users\KHANH\Desktop\capture\capture.c	67;"	f	line:67	signature:(void)
+capture_mode2	C:\Users\KHANH\Desktop\capture\capture.c	60;"	p	line:60	file:	signature:(void)
+capture_mode2	C:\Users\KHANH\Desktop\capture\capture.c	84;"	f	line:84	signature:(void)
+ch	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	190;"	l	line:190
+count	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+data	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+e	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	191;"	l	line:191
+i	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	145;"	l	line:145
+i	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	191;"	l	line:191
+interrupt_isr	C:\Users\KHANH\Desktop\capture\capture.c	165;"	f	line:165	signature:(void)
+interrupt_isr	C:\Users\KHANH\Desktop\capture\capture.c	58;"	p	line:58	file:	signature:(void)
+j	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	145;"	l	line:145
+j	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	191;"	l	line:191
+k	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	145;"	l	line:145
+k	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	191;"	l	line:191
+khoi_tao	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	41;"	p	line:41	signature:(void)
+l	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	145;"	l	line:145
+l	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	191;"	l	line:191
+l	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	251;"	l	line:251
+last_value	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+lcd_busy::LATDbits.LATD7	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	16;"	d	line:16
+lcd_clear	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	118;"	f	line:118	signature:(void)
+lcd_clear	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	44;"	p	line:44	signature:(void)
+lcd_gotoxy	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	134;"	f	line:134	signature:(int x, int y)
+lcd_gotoxy	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	40;"	p	line:40	signature:(int x, int y)
+lcd_int	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	157;"	f	line:157	signature:(int val)
+lcd_int	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	45;"	p	line:45	signature:(int val)
+lcd_line_one::0x00	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	31;"	d	line:31
+lcd_line_two::0x40	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	30;"	d	line:30
+lcd_putstr	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	122;"	f	line:122	signature:(char *buffer)
+lcd_putstr	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	39;"	p	line:39	signature:(char *buffer)
+low_vector	C:\Users\KHANH\Desktop\capture\capture.c	157;"	f	line:157	signature:(void)
+m	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	145;"	l	line:145
+m	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	251;"	l	line:251
+main	C:\Users\KHANH\Desktop\capture\capture.c	136;"	f	line:136	signature:(void)
+n	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	251;"	l	line:251
+p	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	251;"	l	line:251
+print_int	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	205;"	f	line:205	signature:(int val)
+print_int	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	46;"	p	line:46	signature:(int val)
+q	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	251;"	l	line:251
+st	C:\Users\KHANH\Desktop\capture\capture.c	138;"	l	line:138
+str1	C:\Users\KHANH\Desktop\capture\capture.c	65;"	v	line:65
+str5	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	207;"	l	line:207
+tanso	C:\Users\KHANH\Desktop\capture\capture.c	64;"	v	line:64
+temp	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+temp1	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	82;"	l	line:82
+temp2	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	101;"	l	line:101
+timer1_config	C:\Users\KHANH\Desktop\capture\capture.c	100;"	f	line:100	signature:(void)
+timer1_config	C:\Users\KHANH\Desktop\capture\capture.c	61;"	p	line:61	file:	signature:(void)
+timer3_config	C:\Users\KHANH\Desktop\capture\capture.c	117;"	f	line:117	signature:(void)
+timer3_config	C:\Users\KHANH\Desktop\capture\capture.c	62;"	p	line:62	file:	signature:(void)
+timer_lcd	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	249;"	f	line:249	signature:(long k)
+timer_lcd	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	47;"	p	line:47	signature:(long k)
+u	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	75;"	l	line:75
+val1	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	208;"	l	line:208
+val2	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	208;"	l	line:208
+val3	C:\Users\KHANH\Desktop\capture\lcd_lcd.h	208;"	l	line:208
+value_count	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+value_count_last	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63
+value_count_sum	C:\Users\KHANH\Desktop\capture\capture.c	63;"	v	line:63

@@ -1,0 +1,4 @@
+build/default/production/LCD/LCD.o:  \
+	F:/PROJECT/MPLABX/RF315MHz/RecRF315MHz.X/LCD/LCD.c  \
+	F:/PROJECT/MPLABX/RF315MHz/RecRF315MHz.X/LCD/LCD.h  \
+

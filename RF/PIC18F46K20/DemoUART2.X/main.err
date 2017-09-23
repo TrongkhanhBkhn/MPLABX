@@ -1,0 +1,8 @@
+Error[1105] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 69 : symbol 'BAUD_RATE_GEN' has not been defined
+Error[1105] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 73 : symbol 'Txdata' has not been defined
+Error[1105] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 76 : symbol 'Rxdata' has not been defined
+Error[1105] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 77 : symbol 'Rxdata' has not been defined
+Error[1129] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 77 : [] operator requires a pointer and an integer as operands
+Error[1101] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 77 : lvalue required
+Error[1105] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 78 : symbol 'Rxdata' has not been defined
+Warning[2058] F:\PROJECT\MPLABX\RF\PIC18F46K20\DemoUART2.X\main.c 99 : call of function without prototype

@@ -1,0 +1,5 @@
+build/default/production/SPI/SPI.o:  \
+	F:/PROJECT/MPLABX/RF315MHz/RecRF315MHz.X/SPI/SPI.c  \
+	F:/PROJECT/MPLABX/RF315MHz/RecRF315MHz.X/SPI/SPI.h  \
+	F:/PROJECT/MPLABX/RF315MHz/RecRF315MHz.X/Hardware/Generic.h  \
+

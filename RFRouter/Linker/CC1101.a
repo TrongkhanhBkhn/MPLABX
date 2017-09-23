@@ -1,0 +1,1163 @@
+;#include "cc1101.h"
+;PCODE: $00000000 VOL: 0
+	#ifndef __SLEEP_DEFINED__
+;PCODE: $00000001 VOL: 0
+	#define __SLEEP_DEFINED__
+;PCODE: $00000002 VOL: 0
+	.EQU __se_bit=0x80
+;PCODE: $00000003 VOL: 0
+	.EQU __sm_mask=0x70
+;PCODE: $00000004 VOL: 0
+	.EQU __sm_powerdown=0x20
+;PCODE: $00000005 VOL: 0
+	.EQU __sm_powersave=0x30
+;PCODE: $00000006 VOL: 0
+	.EQU __sm_standby=0x60
+;PCODE: $00000007 VOL: 0
+	.EQU __sm_ext_standby=0x70
+;PCODE: $00000008 VOL: 0
+	.EQU __sm_adc_noise_red=0x10
+;PCODE: $00000009 VOL: 0
+	.SET power_ctrl_reg=mcucr
+;PCODE: $0000000A VOL: 0
+	#endif
+;PCODE: $0000000B VOL: 0
+;PCODE: $0000000C VOL: 0
+;//#define RF_0db
+;static unsigned char rssi;
+;static unsigned char lqi;
+;#define RF_10db
+;
+;// Product = CC1101
+;// Crystal accuracy = 40 ppm
+;// X-tal frequency = 26 MHz
+;// RF output power = 0 dBm
+;// RX filterbandwidth = 540.000000 kHz
+;// Deviation = 0.000000
+;// Return state:  Return to RX state upon leaving either TX or RX
+;// Datarate = 250.000000 kbps
+;// Modulation = (7) MSK
+;// Manchester enable = (0) Manchester disabled
+;// RF Frequency = 433.000000 MHz
+;// Channel spacing = 199.951172 kHz
+;// Channel number = 0
+;// Optimization = Sensitivity
+;// Sync mode = (3) 30/32 sync word bits detected
+;// Format of RX/TX data = (0) Normal mode, use FIFOs for RX and TX
+;// CRC operation = (1) CRC calculation in TX and CRC check in RX enabled
+;// Forward Error Correction = (0) FEC disabled
+;// Length configuration = (1) Variable length packets, packet length configured by the first received byte after sync word.
+;// Packetlength = 255
+;// Preamble count = (2)  4 bytes
+;// Append status = 1
+;// Address check = (0) No address check
+;// FIFO autoflush = 0
+;// Device address = 0
+;// GDO0 signal selection = ( 6) Asserts when sync word has been sent / received, and de-asserts at the end of the packet
+;// GDO2 signal selection = (11) Serial Clock
+;void writeRFSettings(void)
+; 0001 0023 {
+
+	.CSEG
+;PCODE: $0000000D VOL: 0
+;PCODE: $0000000E VOL: 0
+; 0001 0024     // Write register settings
+; 0001 0025     CC1101_WriteReg(CC1101_IOCFG2,   0x0B); // GDO2 output pin config.
+;PCODE: $0000000F VOL: 0
+;PCODE: $00000010 VOL: 0
+;PCODE: $00000011 VOL: 0
+;PCODE: $00000012 VOL: 0
+;PCODE: $00000013 VOL: 0
+; 0001 0026     CC1101_WriteReg(CC1101_IOCFG0,   0x06); // GDO0 output pin config.
+;PCODE: $00000014 VOL: 0
+;PCODE: $00000015 VOL: 0
+;PCODE: $00000016 VOL: 0
+;PCODE: $00000017 VOL: 0
+;PCODE: $00000018 VOL: 0
+; 0001 0027     CC1101_WriteReg(CC1101_PKTLEN,   0xFF); // Packet length.
+;PCODE: $00000019 VOL: 0
+;PCODE: $0000001A VOL: 0
+;PCODE: $0000001B VOL: 0
+;PCODE: $0000001C VOL: 0
+;PCODE: $0000001D VOL: 0
+; 0001 0028     CC1101_WriteReg(CC1101_PKTCTRL1, 0x04); // Packet automation control.
+;PCODE: $0000001E VOL: 0
+;PCODE: $0000001F VOL: 0
+;PCODE: $00000020 VOL: 0
+;PCODE: $00000021 VOL: 0
+;PCODE: $00000022 VOL: 0
+; 0001 0029     CC1101_WriteReg(CC1101_PKTCTRL0, 0x05); // Packet automation control.
+;PCODE: $00000023 VOL: 0
+;PCODE: $00000024 VOL: 0
+;PCODE: $00000025 VOL: 0
+;PCODE: $00000026 VOL: 0
+;PCODE: $00000027 VOL: 0
+; 0001 002A     CC1101_WriteReg(CC1101_ADDR,     0x02); // Device address.
+;PCODE: $00000028 VOL: 0
+;PCODE: $00000029 VOL: 0
+;PCODE: $0000002A VOL: 0
+;PCODE: $0000002B VOL: 0
+;PCODE: $0000002C VOL: 0
+; 0001 002B     CC1101_WriteReg(CC1101_CHANNR,   0x00); // Channel number.
+;PCODE: $0000002D VOL: 0
+;PCODE: $0000002E VOL: 0
+;PCODE: $0000002F VOL: 0
+;PCODE: $00000030 VOL: 0
+;PCODE: $00000031 VOL: 0
+; 0001 002C     CC1101_WriteReg(CC1101_FSCTRL1,  0x0B); // Freq synthesizer control.
+;PCODE: $00000032 VOL: 0
+;PCODE: $00000033 VOL: 0
+;PCODE: $00000034 VOL: 0
+;PCODE: $00000035 VOL: 0
+;PCODE: $00000036 VOL: 0
+; 0001 002D     CC1101_WriteReg(CC1101_FSCTRL0,  0x00); // Freq synthesizer control.
+;PCODE: $00000037 VOL: 0
+;PCODE: $00000038 VOL: 0
+;PCODE: $00000039 VOL: 0
+;PCODE: $0000003A VOL: 0
+;PCODE: $0000003B VOL: 0
+; 0001 002E     CC1101_WriteReg(CC1101_FREQ2,    0x10); // Freq control word, high byte
+;PCODE: $0000003C VOL: 0
+;PCODE: $0000003D VOL: 0
+;PCODE: $0000003E VOL: 0
+;PCODE: $0000003F VOL: 0
+;PCODE: $00000040 VOL: 0
+; 0001 002F     CC1101_WriteReg(CC1101_FREQ1,    0xA7); // Freq control word, mid byte.
+;PCODE: $00000041 VOL: 0
+;PCODE: $00000042 VOL: 0
+;PCODE: $00000043 VOL: 0
+;PCODE: $00000044 VOL: 0
+;PCODE: $00000045 VOL: 0
+; 0001 0030     CC1101_WriteReg(CC1101_FREQ0,    0x62); // Freq control word, low byte.
+;PCODE: $00000046 VOL: 0
+;PCODE: $00000047 VOL: 0
+;PCODE: $00000048 VOL: 0
+;PCODE: $00000049 VOL: 0
+;PCODE: $0000004A VOL: 0
+; 0001 0031 
+; 0001 0032     CC1101_WriteReg(CC1101_MDMCFG4,  0x2D); // Modem configuration.
+;PCODE: $0000004B VOL: 0
+;PCODE: $0000004C VOL: 0
+;PCODE: $0000004D VOL: 0
+;PCODE: $0000004E VOL: 0
+;PCODE: $0000004F VOL: 0
+; 0001 0033     CC1101_WriteReg(CC1101_MDMCFG3,  0x3B); // Modem configuration.
+;PCODE: $00000050 VOL: 0
+;PCODE: $00000051 VOL: 0
+;PCODE: $00000052 VOL: 0
+;PCODE: $00000053 VOL: 0
+;PCODE: $00000054 VOL: 0
+; 0001 0034     CC1101_WriteReg(CC1101_MDMCFG2,  0x73); // Modem configuration.   ->OK
+;PCODE: $00000055 VOL: 0
+;PCODE: $00000056 VOL: 0
+;PCODE: $00000057 VOL: 0
+;PCODE: $00000058 VOL: 0
+;PCODE: $00000059 VOL: 0
+; 0001 0035     CC1101_WriteReg(CC1101_MDMCFG1,  0x22); // Modem configuration.
+;PCODE: $0000005A VOL: 0
+;PCODE: $0000005B VOL: 0
+;PCODE: $0000005C VOL: 0
+;PCODE: $0000005D VOL: 0
+;PCODE: $0000005E VOL: 0
+; 0001 0036     CC1101_WriteReg(CC1101_MDMCFG0,  0xF8); // Modem configuration.
+;PCODE: $0000005F VOL: 0
+;PCODE: $00000060 VOL: 0
+;PCODE: $00000061 VOL: 0
+;PCODE: $00000062 VOL: 0
+;PCODE: $00000063 VOL: 0
+; 0001 0037 
+; 0001 0038 
+; 0001 0039     CC1101_WriteReg(CC1101_DEVIATN,  0x00); // Modem dev (when FSK mod en)
+;PCODE: $00000064 VOL: 0
+;PCODE: $00000065 VOL: 0
+;PCODE: $00000066 VOL: 0
+;PCODE: $00000067 VOL: 0
+;PCODE: $00000068 VOL: 0
+; 0001 003A 
+; 0001 003B     CC1101_WriteReg(CC1101_MCSM1 ,   0x3F); //MainRadio Cntrl State Machine
+;PCODE: $00000069 VOL: 0
+;PCODE: $0000006A VOL: 0
+;PCODE: $0000006B VOL: 0
+;PCODE: $0000006C VOL: 0
+;PCODE: $0000006D VOL: 0
+; 0001 003C     CC1101_WriteReg(CC1101_MCSM0 ,   0x18); //MainRadio Cntrl State Machine
+;PCODE: $0000006E VOL: 0
+;PCODE: $0000006F VOL: 0
+;PCODE: $00000070 VOL: 0
+;PCODE: $00000071 VOL: 0
+;PCODE: $00000072 VOL: 0
+; 0001 003D 
+; 0001 003E     CC1101_WriteReg(CC1101_FOCCFG,   0x1D); // Freq Offset Compens. Config
+;PCODE: $00000073 VOL: 0
+;PCODE: $00000074 VOL: 0
+;PCODE: $00000075 VOL: 0
+;PCODE: $00000076 VOL: 0
+;PCODE: $00000077 VOL: 0
+; 0001 003F     CC1101_WriteReg(CC1101_BSCFG,    0x1C); //  Bit synchronization config.
+;PCODE: $00000078 VOL: 0
+;PCODE: $00000079 VOL: 0
+;PCODE: $0000007A VOL: 0
+;PCODE: $0000007B VOL: 0
+;PCODE: $0000007C VOL: 0
+; 0001 0040 
+; 0001 0041     CC1101_WriteReg(CC1101_AGCCTRL2, 0xC7); // AGC control.
+;PCODE: $0000007D VOL: 0
+;PCODE: $0000007E VOL: 0
+;PCODE: $0000007F VOL: 0
+;PCODE: $00000080 VOL: 0
+;PCODE: $00000081 VOL: 0
+; 0001 0042     CC1101_WriteReg(CC1101_AGCCTRL1, 0x00); // AGC control.
+;PCODE: $00000082 VOL: 0
+;PCODE: $00000083 VOL: 0
+;PCODE: $00000084 VOL: 0
+;PCODE: $00000085 VOL: 0
+;PCODE: $00000086 VOL: 0
+; 0001 0043     CC1101_WriteReg(CC1101_AGCCTRL0, 0xB2); // AGC control.
+;PCODE: $00000087 VOL: 0
+;PCODE: $00000088 VOL: 0
+;PCODE: $00000089 VOL: 0
+;PCODE: $0000008A VOL: 0
+;PCODE: $0000008B VOL: 0
+; 0001 0044 
+; 0001 0045     CC1101_WriteReg(CC1101_FREND1,   0xB6); // Front end RX configuration.
+;PCODE: $0000008C VOL: 0
+;PCODE: $0000008D VOL: 0
+;PCODE: $0000008E VOL: 0
+;PCODE: $0000008F VOL: 0
+;PCODE: $00000090 VOL: 0
+; 0001 0046     CC1101_WriteReg(CC1101_FREND0,   0x10); // Front end RX configuration.
+;PCODE: $00000091 VOL: 0
+;PCODE: $00000092 VOL: 0
+;PCODE: $00000093 VOL: 0
+;PCODE: $00000094 VOL: 0
+;PCODE: $00000095 VOL: 0
+; 0001 0047 
+; 0001 0048 
+; 0001 0049     CC1101_WriteReg(CC1101_FSCAL3,   0xEA); // Frequency synthesizer cal.
+;PCODE: $00000096 VOL: 0
+;PCODE: $00000097 VOL: 0
+;PCODE: $00000098 VOL: 0
+;PCODE: $00000099 VOL: 0
+;PCODE: $0000009A VOL: 0
+; 0001 004A     CC1101_WriteReg(CC1101_FSCAL2,   0x0A); // Frequency synthesizer cal.
+;PCODE: $0000009B VOL: 0
+;PCODE: $0000009C VOL: 0
+;PCODE: $0000009D VOL: 0
+;PCODE: $0000009E VOL: 0
+;PCODE: $0000009F VOL: 0
+; 0001 004B     CC1101_WriteReg(CC1101_FSCAL1,   0x00); // Frequency synthesizer cal.
+;PCODE: $000000A0 VOL: 0
+;PCODE: $000000A1 VOL: 0
+;PCODE: $000000A2 VOL: 0
+;PCODE: $000000A3 VOL: 0
+;PCODE: $000000A4 VOL: 0
+; 0001 004C     CC1101_WriteReg(CC1101_FSCAL0,   0x11); // Frequency synthesizer cal.
+;PCODE: $000000A5 VOL: 0
+;PCODE: $000000A6 VOL: 0
+;PCODE: $000000A7 VOL: 0
+;PCODE: $000000A8 VOL: 0
+;PCODE: $000000A9 VOL: 0
+; 0001 004D 
+; 0001 004E     CC1101_WriteReg(CC1101_FSTEST,   0x59); // Frequency synthesizer cal.
+;PCODE: $000000AA VOL: 0
+;PCODE: $000000AB VOL: 0
+;PCODE: $000000AC VOL: 0
+;PCODE: $000000AD VOL: 0
+;PCODE: $000000AE VOL: 0
+; 0001 004F     CC1101_WriteReg(CC1101_TEST2,    0x88); // Various test settings.
+;PCODE: $000000AF VOL: 0
+;PCODE: $000000B0 VOL: 0
+;PCODE: $000000B1 VOL: 0
+;PCODE: $000000B2 VOL: 0
+;PCODE: $000000B3 VOL: 0
+; 0001 0050     CC1101_WriteReg(CC1101_TEST1,    0x31); // Various test settings.
+;PCODE: $000000B4 VOL: 0
+;PCODE: $000000B5 VOL: 0
+;PCODE: $000000B6 VOL: 0
+;PCODE: $000000B7 VOL: 0
+;PCODE: $000000B8 VOL: 0
+; 0001 0051     CC1101_WriteReg(CC1101_TEST0,    0x0B); // Various test settings.
+;PCODE: $000000B9 VOL: 0
+;PCODE: $000000BA VOL: 0
+;PCODE: $000000BB VOL: 0
+;PCODE: $000000BC VOL: 0
+;PCODE: $000000BD VOL: 0
+; 0001 0052 }
+;PCODE: $000000BE VOL: 0
+;PCODE: $000000BF VOL: 0
+;RF_SETTINGS rfSettings =        // 433Mhz, 9600Bauds
+;{
+;    0x06,  // FSCTRL1       Frequency Synthesizer Control - IF:152.343Khz
+;    0x06,  // IOCFG0        GDO0 Output Pin Configuration - Packet received and CRC OK
+;    0x00,  // FSCTRL0       Frequency Synthesizer Control - Freq offset
+;    0x10,  // FREQ2         Frequency Control Word, High Byte - 433.999 Mhz
+;    0xB1,  // FREQ1         Frequency Control Word, Middle Byte
+;    0x3B,  // FREQ0         Frequency Control Word, Low Byte
+;
+;    0xF8,  // MDMCFG4       Modem Configuration - BW: 58.035Khz
+;    0x83,  // MDMCFG3       Modem Configuration - 9595 Baud
+;    0x13,  // MDMCFG2       Modem Configuration - 30/32 sync word bits - Manchester disable - GFSK - Digital DC filter enable
+;    0x22,  // MDMCFG1       Modem Configuration - num of preamble bytes:4 - FEC disable
+;    0xF8,  // MDMCFG0       Modem Configuration - Channel spacing: 199.951Khz
+;
+;    0x00,  // CHANNR        Channel Number
+;    0x15,  // DEVIATN       Modem Deviation Setting - 5.157Khz
+;    0x56,  // FREND1        Front End RX Configuration
+;    0x10,  // FREND0        Front End TX Configuration
+;    0x18,  // MCSM0         Main Radio Control State Machine Configuration - PO timeout: 64(149-155us) - Auto calibrate from idle to rx/tx
+;    0x16,  // FOCCFG        Frequency Offset Compensation Configuration
+;    0x6C,  // BSCFG         Bit Synchronization Configuration
+;    0x03,  // AGCCTRL2      AGC Control - target amplitude: 33dB - Maximum possible LNA + LNA 2 gain - All gain settings can be used
+;    0x40,  // AGCCTRL1      AGC Control - LNA gain decreased first
+;    0x91,  // AGCCTRL0      AGC Control - Medium hysterisis - Filter Samples: 16 - Normal AGC operation
+;
+;    0xE9,  // FSCAL3        Frequency Synthesizer Calibration
+;    0x2A,  // FSCAL2        Frequency Synthesizer Calibration
+;    0x00,  // FSCAL1        Frequency Synthesizer Calibration
+;    0x1F,  // FSCAL0        Frequency Synthesizer Calibration
+;
+;    0x59,  // FSTEST        Frequency Synthesizer Calibration Control
+;    0x88,  // TEST2         Various Test Settings
+;    0x31,  // TEST1         Various Test Settings
+;    0x09,  // TEST0         Various Test Settings
+;    0x07,  // FIFOTHR       RX FIFO and TX FIFO Thresholds - Bytes in TX FIFO:33 - Bytes in RX FIFO:32
+;    0x06,  // IOCFG2        GDO2 Output Pin Configuration - Sync word received/sent - end of packet
+;    0x04,  // PKTCTRL1      Packet Automation Control - No address check - Automatic flush of RX FIFO is disable - sync word is always accepted
+;    0x05,  // PKTCTRL0      Packet Automation Control - whitening is off - RX/TX data normal mode - CRC calculation in TX and CRC check in RX - Variable packet length
+;    0x00,  // ADDR          Device Address
+;    0xFF,  // PKTLEN        Packet Length
+;    0x3F,  // MCSM1         Main Radio Control State Machine Configuration
+;};
+
+	.DSEG
+;
+;CC1101_CONFIG Config=
+;{
+;    0x29,  //    uint8_t IOCFG2
+;    0x2e,  //    uint8_t IOCFG1;
+;    0x06,  //    uint8_t IOCFG0;
+;    0x47,  //    uint8_t FIFOTHR;
+;    0xd3,  //    uint8_t SYNC1;
+;    0x91,  //    uint8_t SYNC0;
+;    0xFF,  //    uint8_t PKTLEN;
+;    0x04,  //    uint8_t PKTCTRL1;
+;    0x05,  //    uint8_t PKTCTRL0;
+;    0x00,  //    uint8_t ADDR;
+;    0x00,  //    uint8_t CHANNR;
+;    0x06,  //    uint8_t FSCTRL1;
+;    0x00,  //    uint8_t FSCTROL0;
+;    0x10,  //    uint8_t FREQ2;
+;    0xB1,  //    uint8_t FREQ1;
+;    0x3B,  //    uint8_t FREQ0;
+;    0xF6,  //    uint8_t MDMCFG4;
+;    0x83,  //    uint8_t MDMCFG3;
+;    0x13,  //    uint8_t MDMCFG2;
+;    0x22,  //    uint8_t MDMCFG1;
+;    0xF8,  //    uint8_t MDMCFG0;
+;    0x15,  //    uint8_t DEVIATN;
+;    0x07,  //    uint8_t MCSM2;
+;    0x30,  //    uint8_t MCSM1;
+;    0x18,  //    uint8_t MCSM0;
+;    0x16,  //    uint8_t FOCCFG;
+;    0x6C,  //    uint8_t BSCFG;
+;    0x03,  //    uint8_t AGCCTRL2;
+;    0x40,  //    uint8_t AGCCTRL1;
+;    0x91,  //    uint8_t AGCCTRL0;
+;    0x87,  //    uint8_t WOREVT1;
+;    0x6B,  //    uint8_t WOREVT0;
+;    0xFB,  //    uint8_t WORCTRL;
+;    0x56,  //    uint8_t FREND1;
+;    0x10,  //    uint8_t FREND0;
+;    0xE9,  //    uint8_t FSCAL3;
+;    0x2A,  //    uint8_t FSCAL2;
+;    0x00,  //    uint8_t FSCAL1;
+;    0x1F,  //    uint8_t FSCAL0;
+;    0x41,  //    uint8_t RCCTRL1;
+;    0x00,  //    uint8_t RCCTRL0;
+;    0x59,  //    uint8_t FSTEST;
+;    0x7f,  //    uint8_t PTEST;
+;    0x3f,  //    uint8_t AGCTEST;
+;    0x81,  //    uint8_t TEST2;
+;    0x35,  //    uint8_t TEST1;
+;    0x09,  //    uint8_t TEST0;
+;};
+;/*const PRO_DATA CC1101_CONFIG DefaultConfig =
+;{
+;    0x29,  //    uint8_t IOCFG2
+;    0x2e,  //    uint8_t IOCFG1;
+;    0x07,  //    uint8_t IOCFG0;
+;    0x07,  //    uint8_t FIFOTHR;
+;    0xd3,  //    uint8_t SYNC1;
+;    0x91,  //    uint8_t SYNC0;
+;    0xff,  //    uint8_t PKTLEN;
+;    0x04,  //    uint8_t PKTCTRL1;
+;    0x45,  //    uint8_t PKTCTRL0;
+;    0x00,  //    uint8_t ADDR;
+;    0x00,  //    uint8_t CHANNR;
+;    0x06,  //    uint8_t FSCTRL1;
+;    0x00,  //    uint8_t FSCTROL0;
+;    0x1e,  //    uint8_t FREQ2;
+;    0xc4,  //    uint8_t FREQ1;
+;    0xec,  //    uint8_t FREQ0;
+;    0x8C,  //    uint8_t MDMCFG4;
+;    0x22,  //    uint8_t MDMCFG3;
+;    0x02,  //    uint8_t MDMCFG2;
+;    0x22,  //    uint8_t MDMCFG1;
+;    0xf8,  //    uint8_t MDMCFG0;
+;    0x47,  //    uint8_t DEVIATN;
+;    0x07,  //    uint8_t MCSM2;
+;    0x30,  //    uint8_t MCSM1;
+;    0x04,  //    uint8_t MCSM0;
+;    0x66,  //    uint8_t FOCCFG;
+;    0x66,  //    uint8_t BSCFG;
+;    0x03,  //    uint8_t AGCCTRL2;
+;    0x40,  //    uint8_t AGCCTRL1;
+;    0x91,  //    uint8_t AGCCTRL0;
+;    0x87,  //    uint8_t WOREVT1;
+;    0x6B,  //    uint8_t WOREVT0;
+;    0xf8,  //    uint8_t WORCTRL;
+;    0x56,  //    uint8_t FREND1;
+;    0x10,  //    uint8_t FREND0;
+;    0xa9,  //    uint8_t FSCAL3;
+;    0x0a,  //    uint8_t FSCAL2;
+;    0x20,  //    uint8_t FSCAL1;
+;    0x0d,  //    uint8_t FSCAL0;
+;    0x41,  //    uint8_t RCCTRL1;
+;    0x00,  //    uint8_t RCCTRL0;
+;    0x59,  //    uint8_t FSTEST;
+;    0x7f,  //    uint8_t PTEST;
+;    0x3f,  //    uint8_t AGCTEST;
+;    0x88,  //    uint8_t TEST2;
+;    0x31,  //    uint8_t TEST1;
+;    0x0B,  //    uint8_t TEST0;
+;};*/
+;#ifdef RF_0db
+;// PATABLE (0 dBm output power)
+;    uint8_t PATABLE_VALUE[8]={0x60,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+;#endif
+;#ifdef RF_10db
+;// PATABLE (10 dBm output power)
+;       uint8_t PATABLE_VALUE[8]={0xC0,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+;#endif
+;
+;/*******************************************************************************
+;Noi Dung    :   Gui tin hieu RESET toi CC1101.
+;Tham Bien   :   Khong.
+;Tra Ve      :   Khong.
+;
+;********************************************************************************/
+;void CC1101_Reset(void)
+; 0001 00F3 {
+
+	.CSEG
+;PCODE: $000000C0 VOL: 0
+;PCODE: $000000C1 VOL: 0
+; 0001 00F4   CC1101_CS= 0;
+;PCODE: $000000C2 VOL: 0
+;PCODE: $000000C3 VOL: 0
+; 0001 00F5   delay_us(2);
+;PCODE: $000000C4 VOL: 0
+; 0001 00F6   while (CC1101_MISO);              // cho cho chan MISO xuong muc thap
+;PCODE: $000000C5 VOL: 0
+;PCODE: $000000C6 VOL: 0
+;PCODE: $000000C7 VOL: 0
+;PCODE: $000000C8 VOL: 0
+;PCODE: $000000C9 VOL: 0
+;PCODE: $000000CA VOL: 0
+;PCODE: $000000CB VOL: 0
+; 0001 00F7   SPI_SOFT_ReadWrite(CC1101_SRES);
+;PCODE: $000000CC VOL: 0
+; 0001 00F8   delay_us(2);
+;PCODE: $000000CD VOL: 0
+;PCODE: $000000CE VOL: 0
+; 0001 00F9   CC1101_CS=1;
+;PCODE: $000000CF VOL: 0
+;PCODE: $000000D0 VOL: 0
+;PCODE: $000000D1 VOL: 0
+; 0001 00FA }
+;PCODE: $000000D2 VOL: 0
+;PCODE: $000000D3 VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Thiet lap cap nguon hoat dong cho CC1101.
+;Tham Bien   :   Khong.
+;Tra Ve      :   Khong.
+;// Macro to reset the CCxxx0 after power_on and wait for it to be ready
+;// IMPORTANT NOTICE:
+;// The file Wait.c must be included if this macro shall be used
+;//
+;//                 min 40 us
+;//             <----------------------->
+;// CSn      |--|  |--------------------|          |-----------
+;//          |  |  |                    |          |
+;//              --                      ----------
+;//
+;// MISO                                       |---------------
+;//          - - - - - - - - - - - - - - - -|  |
+;//                                          --
+;//               Unknown / don't care
+;//
+;// MOSI     - - - - - - - - - - - - - - - ---------- - - - - -
+;//                                         | SRES |
+;//          - - - - - - - - - - - - - - - ---------- - - - - -
+;********************************************************************************/
+;void CC1101_PowerUp(void)
+; 0001 0113 {
+;PCODE: $000000D4 VOL: 0
+;PCODE: $000000D5 VOL: 0
+; 0001 0114   CC1101_CS=1;
+;PCODE: $000000D6 VOL: 0
+;PCODE: $000000D7 VOL: 0
+; 0001 0115   delay_us(1);             //  wait(1e-6);
+;PCODE: $000000D8 VOL: 0
+; 0001 0116   CC1101_CS = 0;
+;PCODE: $000000D9 VOL: 0
+;PCODE: $000000DA VOL: 0
+;PCODE: $000000DB VOL: 0
+; 0001 0117   delay_us(1);
+;PCODE: $000000DC VOL: 0
+; 0001 0118   CC1101_CS = 1;
+;PCODE: $000000DD VOL: 0
+;PCODE: $000000DE VOL: 0
+;PCODE: $000000DF VOL: 0
+; 0001 0119   delay_us(41);            //  wait(41e-6);
+;PCODE: $000000E0 VOL: 0
+; 0001 011A   CC1101_Reset();
+;PCODE: $000000E1 VOL: 0
+;PCODE: $000000E2 VOL: 0
+; 0001 011B }
+;PCODE: $000000E3 VOL: 0
+;PCODE: $000000E4 VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Gui mot lenh thuc thi toi CC1101.
+;Tham Bien   :   strobe    :   Ma lenh thuc thi.
+;Tra Ve      :    Gia tri doc duoc khi gui ma lenh.
+;********************************************************************************/
+;uint8_t CC1101_Strobe(uint8_t strobe)
+; 0001 0122 {
+;PCODE: $000000E5 VOL: 0
+;PCODE: $000000E6 VOL: 0
+; 0001 0123     uint8_t x;
+; 0001 0124     delay_us(5);
+;PCODE: $000000E7 VOL: 0
+;	strobe -> Y+1
+;	x -> R17
+;PCODE: $000000E8 VOL: 0
+; 0001 0125     CC1101_CS = 0;
+;PCODE: $000000E9 VOL: 0
+;PCODE: $000000EA VOL: 0
+;PCODE: $000000EB VOL: 0
+; 0001 0126     delay_us(2);
+;PCODE: $000000EC VOL: 0
+; 0001 0127     while (CC1101_MISO);
+;PCODE: $000000ED VOL: 0
+;PCODE: $000000EE VOL: 0
+;PCODE: $000000EF VOL: 0
+;PCODE: $000000F0 VOL: 0
+;PCODE: $000000F1 VOL: 0
+;PCODE: $000000F2 VOL: 0
+;PCODE: $000000F3 VOL: 0
+; 0001 0128     x = SPI_SOFT_ReadWrite(strobe);
+;PCODE: $000000F4 VOL: 0
+;PCODE: $000000F5 VOL: 0
+; 0001 0129     delay_us(2);
+;PCODE: $000000F6 VOL: 0
+;PCODE: $000000F7 VOL: 0
+; 0001 012A     CC1101_CS = 1;
+;PCODE: $000000F8 VOL: 0
+;PCODE: $000000F9 VOL: 0
+;PCODE: $000000FA VOL: 0
+; 0001 012B     return x;
+;PCODE: $000000FB VOL: 0
+;PCODE: $000000FC VOL: 0
+;PCODE: $000000FD VOL: 0
+;PCODE: $000000FE VOL: 0
+;PCODE: $000000FF VOL: 0
+; 0001 012C }
+;PCODE: $00000100 VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Doc gia tri cua mot thanh ghi trang thai.
+;Tham Bien   :   addr    :   Dia chi cua thanh ghi.
+;Tra Ve      :   Gia tri hien tai cua thanh ghi.
+;********************************************************************************/
+;uint8_t CC1101_ReadStatus(uint8_t addr)
+; 0001 0133 {
+;PCODE: $00000101 VOL: 0
+;PCODE: $00000102 VOL: 0
+; 0001 0134     uint8_t x;
+; 0001 0135     delay_us(5);
+;PCODE: $00000103 VOL: 0
+;	addr -> Y+1
+;	x -> R17
+;PCODE: $00000104 VOL: 0
+; 0001 0136     CC1101_CS = 0;
+;PCODE: $00000105 VOL: 0
+;PCODE: $00000106 VOL: 0
+;PCODE: $00000107 VOL: 0
+; 0001 0137     delay_us(2);
+;PCODE: $00000108 VOL: 0
+; 0001 0138     while (CC1101_MISO);
+;PCODE: $00000109 VOL: 0
+;PCODE: $0000010A VOL: 0
+;PCODE: $0000010B VOL: 0
+;PCODE: $0000010C VOL: 0
+;PCODE: $0000010D VOL: 0
+;PCODE: $0000010E VOL: 0
+;PCODE: $0000010F VOL: 0
+; 0001 0139     SPI_SOFT_ReadWrite(addr | READ_BURST);
+;PCODE: $00000110 VOL: 0
+;PCODE: $00000111 VOL: 0
+; 0001 013A     x = SPI_SOFT_ReadWrite(0);
+;PCODE: $00000112 VOL: 0
+;PCODE: $00000113 VOL: 0
+;PCODE: $00000114 VOL: 0
+; 0001 013B     delay_us(2);
+;PCODE: $00000115 VOL: 0
+;PCODE: $00000116 VOL: 0
+; 0001 013C     CC1101_CS = 1;
+;PCODE: $00000117 VOL: 0
+;PCODE: $00000118 VOL: 0
+;PCODE: $00000119 VOL: 0
+; 0001 013D     return x;
+;PCODE: $0000011A VOL: 0
+;PCODE: $0000011B VOL: 0
+;PCODE: $0000011C VOL: 0
+;PCODE: $0000011D VOL: 0
+;PCODE: $0000011E VOL: 0
+; 0001 013E }
+;PCODE: $0000011F VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Viet cau hinh cai dat ao CC1101.
+;Tham Bien   :   pRfSettings    :   Cau hinh cai dat
+;Tra Ve      :   Khong.
+;********************************************************************************/
+;void CC1101_Config( CC1101_CONFIG* Config)
+; 0001 0145 {
+;PCODE: $00000120 VOL: 0
+;PCODE: $00000121 VOL: 0
+; 0001 0146     CC1101_WriteBurstReg(0x00, (uint8_t*) Config, 47);
+;	*Config -> Y+0
+;PCODE: $00000122 VOL: 0
+;PCODE: $00000123 VOL: 0
+;PCODE: $00000124 VOL: 0
+;PCODE: $00000125 VOL: 0
+;PCODE: $00000126 VOL: 0
+;PCODE: $00000127 VOL: 0
+;PCODE: $00000128 VOL: 0
+; 0001 0147 }
+;PCODE: $00000129 VOL: 0
+;PCODE: $0000012A VOL: 0
+;PCODE: $0000012B VOL: 0
+;void CC1101_WriteRfSettings(RF_SETTINGS *pRfSettings)
+; 0001 0149 {
+;PCODE: $0000012C VOL: 0
+;PCODE: $0000012D VOL: 0
+; 0001 014A     // Write register settings
+; 0001 014B     CC1101_WriteReg(CC1101_FSCTRL1,  pRfSettings->FSCTRL1);
+;	*pRfSettings -> Y+0
+;PCODE: $0000012E VOL: 0
+;PCODE: $0000012F VOL: 0
+;PCODE: $00000130 VOL: 0
+;PCODE: $00000131 VOL: 0
+;PCODE: $00000132 VOL: 0
+;PCODE: $00000133 VOL: 0
+; 0001 014C     CC1101_WriteReg(CC1101_FSCTRL0,  pRfSettings->FSCTRL0);
+;PCODE: $00000134 VOL: 0
+;PCODE: $00000135 VOL: 0
+;PCODE: $00000136 VOL: 0
+;PCODE: $00000137 VOL: 0
+;PCODE: $00000138 VOL: 0
+;PCODE: $00000139 VOL: 0
+; 0001 014D     CC1101_WriteReg(CC1101_FREQ2,    pRfSettings->FREQ2);
+;PCODE: $0000013A VOL: 0
+;PCODE: $0000013B VOL: 0
+;PCODE: $0000013C VOL: 0
+;PCODE: $0000013D VOL: 0
+;PCODE: $0000013E VOL: 0
+;PCODE: $0000013F VOL: 0
+; 0001 014E     CC1101_WriteReg(CC1101_FREQ1,    pRfSettings->FREQ1);
+;PCODE: $00000140 VOL: 0
+;PCODE: $00000141 VOL: 0
+;PCODE: $00000142 VOL: 0
+;PCODE: $00000143 VOL: 0
+;PCODE: $00000144 VOL: 0
+;PCODE: $00000145 VOL: 0
+; 0001 014F     CC1101_WriteReg(CC1101_FREQ0,    pRfSettings->FREQ0);
+;PCODE: $00000146 VOL: 0
+;PCODE: $00000147 VOL: 0
+;PCODE: $00000148 VOL: 0
+;PCODE: $00000149 VOL: 0
+;PCODE: $0000014A VOL: 0
+;PCODE: $0000014B VOL: 0
+; 0001 0150     CC1101_WriteReg(CC1101_MDMCFG4,  pRfSettings->MDMCFG4);
+;PCODE: $0000014C VOL: 0
+;PCODE: $0000014D VOL: 0
+;PCODE: $0000014E VOL: 0
+;PCODE: $0000014F VOL: 0
+;PCODE: $00000150 VOL: 0
+;PCODE: $00000151 VOL: 0
+; 0001 0151     CC1101_WriteReg(CC1101_MDMCFG3,  pRfSettings->MDMCFG3);
+;PCODE: $00000152 VOL: 0
+;PCODE: $00000153 VOL: 0
+;PCODE: $00000154 VOL: 0
+;PCODE: $00000155 VOL: 0
+;PCODE: $00000156 VOL: 0
+;PCODE: $00000157 VOL: 0
+; 0001 0152     CC1101_WriteReg(CC1101_MDMCFG2,  pRfSettings->MDMCFG2);
+;PCODE: $00000158 VOL: 0
+;PCODE: $00000159 VOL: 0
+;PCODE: $0000015A VOL: 0
+;PCODE: $0000015B VOL: 0
+;PCODE: $0000015C VOL: 0
+;PCODE: $0000015D VOL: 0
+; 0001 0153     CC1101_WriteReg(CC1101_MDMCFG1,  pRfSettings->MDMCFG1);
+;PCODE: $0000015E VOL: 0
+;PCODE: $0000015F VOL: 0
+;PCODE: $00000160 VOL: 0
+;PCODE: $00000161 VOL: 0
+;PCODE: $00000162 VOL: 0
+;PCODE: $00000163 VOL: 0
+; 0001 0154     CC1101_WriteReg(CC1101_MDMCFG0,  pRfSettings->MDMCFG0);
+;PCODE: $00000164 VOL: 0
+;PCODE: $00000165 VOL: 0
+;PCODE: $00000166 VOL: 0
+;PCODE: $00000167 VOL: 0
+;PCODE: $00000168 VOL: 0
+;PCODE: $00000169 VOL: 0
+; 0001 0155     CC1101_WriteReg(CC1101_CHANNR,   pRfSettings->CHANNR);
+;PCODE: $0000016A VOL: 0
+;PCODE: $0000016B VOL: 0
+;PCODE: $0000016C VOL: 0
+;PCODE: $0000016D VOL: 0
+;PCODE: $0000016E VOL: 0
+;PCODE: $0000016F VOL: 0
+; 0001 0156     CC1101_WriteReg(CC1101_DEVIATN,  pRfSettings->DEVIATN);
+;PCODE: $00000170 VOL: 0
+;PCODE: $00000171 VOL: 0
+;PCODE: $00000172 VOL: 0
+;PCODE: $00000173 VOL: 0
+;PCODE: $00000174 VOL: 0
+;PCODE: $00000175 VOL: 0
+; 0001 0157     CC1101_WriteReg(CC1101_FREND1,   pRfSettings->FREND1);
+;PCODE: $00000176 VOL: 0
+;PCODE: $00000177 VOL: 0
+;PCODE: $00000178 VOL: 0
+;PCODE: $00000179 VOL: 0
+;PCODE: $0000017A VOL: 0
+;PCODE: $0000017B VOL: 0
+; 0001 0158     CC1101_WriteReg(CC1101_FREND0,   pRfSettings->FREND0);
+;PCODE: $0000017C VOL: 0
+;PCODE: $0000017D VOL: 0
+;PCODE: $0000017E VOL: 0
+;PCODE: $0000017F VOL: 0
+;PCODE: $00000180 VOL: 0
+;PCODE: $00000181 VOL: 0
+; 0001 0159     CC1101_WriteReg(CC1101_MCSM0 ,   pRfSettings->MCSM0 );
+;PCODE: $00000182 VOL: 0
+;PCODE: $00000183 VOL: 0
+;PCODE: $00000184 VOL: 0
+;PCODE: $00000185 VOL: 0
+;PCODE: $00000186 VOL: 0
+;PCODE: $00000187 VOL: 0
+; 0001 015A     CC1101_WriteReg(CC1101_FOCCFG,   pRfSettings->FOCCFG);
+;PCODE: $00000188 VOL: 0
+;PCODE: $00000189 VOL: 0
+;PCODE: $0000018A VOL: 0
+;PCODE: $0000018B VOL: 0
+;PCODE: $0000018C VOL: 0
+;PCODE: $0000018D VOL: 0
+; 0001 015B     CC1101_WriteReg(CC1101_BSCFG,    pRfSettings->BSCFG);
+;PCODE: $0000018E VOL: 0
+;PCODE: $0000018F VOL: 0
+;PCODE: $00000190 VOL: 0
+;PCODE: $00000191 VOL: 0
+;PCODE: $00000192 VOL: 0
+;PCODE: $00000193 VOL: 0
+; 0001 015C     CC1101_WriteReg(CC1101_AGCCTRL2, pRfSettings->AGCCTRL2);
+;PCODE: $00000194 VOL: 0
+;PCODE: $00000195 VOL: 0
+;PCODE: $00000196 VOL: 0
+;PCODE: $00000197 VOL: 0
+;PCODE: $00000198 VOL: 0
+;PCODE: $00000199 VOL: 0
+; 0001 015D     CC1101_WriteReg(CC1101_AGCCTRL1, pRfSettings->AGCCTRL1);
+;PCODE: $0000019A VOL: 0
+;PCODE: $0000019B VOL: 0
+;PCODE: $0000019C VOL: 0
+;PCODE: $0000019D VOL: 0
+;PCODE: $0000019E VOL: 0
+;PCODE: $0000019F VOL: 0
+; 0001 015E     CC1101_WriteReg(CC1101_AGCCTRL0, pRfSettings->AGCCTRL0);
+;PCODE: $000001A0 VOL: 0
+;PCODE: $000001A1 VOL: 0
+;PCODE: $000001A2 VOL: 0
+;PCODE: $000001A3 VOL: 0
+;PCODE: $000001A4 VOL: 0
+;PCODE: $000001A5 VOL: 0
+; 0001 015F     CC1101_WriteReg(CC1101_FSCAL3,   pRfSettings->FSCAL3);
+;PCODE: $000001A6 VOL: 0
+;PCODE: $000001A7 VOL: 0
+;PCODE: $000001A8 VOL: 0
+;PCODE: $000001A9 VOL: 0
+;PCODE: $000001AA VOL: 0
+;PCODE: $000001AB VOL: 0
+; 0001 0160     CC1101_WriteReg(CC1101_FSCAL2,   pRfSettings->FSCAL2);
+;PCODE: $000001AC VOL: 0
+;PCODE: $000001AD VOL: 0
+;PCODE: $000001AE VOL: 0
+;PCODE: $000001AF VOL: 0
+;PCODE: $000001B0 VOL: 0
+;PCODE: $000001B1 VOL: 0
+; 0001 0161     CC1101_WriteReg(CC1101_FSCAL1,   pRfSettings->FSCAL1);
+;PCODE: $000001B2 VOL: 0
+;PCODE: $000001B3 VOL: 0
+;PCODE: $000001B4 VOL: 0
+;PCODE: $000001B5 VOL: 0
+;PCODE: $000001B6 VOL: 0
+;PCODE: $000001B7 VOL: 0
+; 0001 0162     CC1101_WriteReg(CC1101_FSCAL0,   pRfSettings->FSCAL0);
+;PCODE: $000001B8 VOL: 0
+;PCODE: $000001B9 VOL: 0
+;PCODE: $000001BA VOL: 0
+;PCODE: $000001BB VOL: 0
+;PCODE: $000001BC VOL: 0
+;PCODE: $000001BD VOL: 0
+; 0001 0163     CC1101_WriteReg(CC1101_FSTEST,   pRfSettings->FSTEST);
+;PCODE: $000001BE VOL: 0
+;PCODE: $000001BF VOL: 0
+;PCODE: $000001C0 VOL: 0
+;PCODE: $000001C1 VOL: 0
+;PCODE: $000001C2 VOL: 0
+;PCODE: $000001C3 VOL: 0
+; 0001 0164     CC1101_WriteReg(CC1101_TEST2,    pRfSettings->TEST2);
+;PCODE: $000001C4 VOL: 0
+;PCODE: $000001C5 VOL: 0
+;PCODE: $000001C6 VOL: 0
+;PCODE: $000001C7 VOL: 0
+;PCODE: $000001C8 VOL: 0
+;PCODE: $000001C9 VOL: 0
+; 0001 0165     CC1101_WriteReg(CC1101_TEST1,    pRfSettings->TEST1);
+;PCODE: $000001CA VOL: 0
+;PCODE: $000001CB VOL: 0
+;PCODE: $000001CC VOL: 0
+;PCODE: $000001CD VOL: 0
+;PCODE: $000001CE VOL: 0
+;PCODE: $000001CF VOL: 0
+; 0001 0166     CC1101_WriteReg(CC1101_TEST0,    pRfSettings->TEST0);
+;PCODE: $000001D0 VOL: 0
+;PCODE: $000001D1 VOL: 0
+;PCODE: $000001D2 VOL: 0
+;PCODE: $000001D3 VOL: 0
+;PCODE: $000001D4 VOL: 0
+;PCODE: $000001D5 VOL: 0
+; 0001 0167     CC1101_WriteReg(CC1101_FIFOTHR,  pRfSettings->FIFOTHR);
+;PCODE: $000001D6 VOL: 0
+;PCODE: $000001D7 VOL: 0
+;PCODE: $000001D8 VOL: 0
+;PCODE: $000001D9 VOL: 0
+;PCODE: $000001DA VOL: 0
+;PCODE: $000001DB VOL: 0
+; 0001 0168     CC1101_WriteReg(CC1101_IOCFG2,   pRfSettings->IOCFG2);
+;PCODE: $000001DC VOL: 0
+;PCODE: $000001DD VOL: 0
+;PCODE: $000001DE VOL: 0
+;PCODE: $000001DF VOL: 0
+;PCODE: $000001E0 VOL: 0
+;PCODE: $000001E1 VOL: 0
+; 0001 0169     CC1101_WriteReg(CC1101_IOCFG0,   pRfSettings->IOCFG0);
+;PCODE: $000001E2 VOL: 0
+;PCODE: $000001E3 VOL: 0
+;PCODE: $000001E4 VOL: 0
+;PCODE: $000001E5 VOL: 0
+;PCODE: $000001E6 VOL: 0
+;PCODE: $000001E7 VOL: 0
+; 0001 016A     CC1101_WriteReg(CC1101_PKTCTRL1, pRfSettings->PKTCTRL1);
+;PCODE: $000001E8 VOL: 0
+;PCODE: $000001E9 VOL: 0
+;PCODE: $000001EA VOL: 0
+;PCODE: $000001EB VOL: 0
+;PCODE: $000001EC VOL: 0
+;PCODE: $000001ED VOL: 0
+; 0001 016B     CC1101_WriteReg(CC1101_PKTCTRL0, pRfSettings->PKTCTRL0);
+;PCODE: $000001EE VOL: 0
+;PCODE: $000001EF VOL: 0
+;PCODE: $000001F0 VOL: 0
+;PCODE: $000001F1 VOL: 0
+;PCODE: $000001F2 VOL: 0
+;PCODE: $000001F3 VOL: 0
+; 0001 016C     CC1101_WriteReg(CC1101_ADDR,     pRfSettings->ADDR);
+;PCODE: $000001F4 VOL: 0
+;PCODE: $000001F5 VOL: 0
+;PCODE: $000001F6 VOL: 0
+;PCODE: $000001F7 VOL: 0
+;PCODE: $000001F8 VOL: 0
+;PCODE: $000001F9 VOL: 0
+; 0001 016D     CC1101_WriteReg(CC1101_PKTLEN,   pRfSettings->PKTLEN);
+;PCODE: $000001FA VOL: 0
+;PCODE: $000001FB VOL: 0
+;PCODE: $000001FC VOL: 0
+;PCODE: $000001FD VOL: 0
+;PCODE: $000001FE VOL: 0
+;PCODE: $000001FF VOL: 0
+; 0001 016E     CC1101_WriteReg(CC1101_MCSM1 ,   pRfSettings->MCSM1 );
+;PCODE: $00000200 VOL: 0
+;PCODE: $00000201 VOL: 0
+;PCODE: $00000202 VOL: 0
+;PCODE: $00000203 VOL: 0
+;PCODE: $00000204 VOL: 0
+;PCODE: $00000205 VOL: 0
+; 0001 016F     CC1101_RXMode();
+;PCODE: $00000206 VOL: 0
+; 0001 0170 
+; 0001 0171 }
+;PCODE: $00000207 VOL: 0
+;PCODE: $00000208 VOL: 0
+;PCODE: $00000209 VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Doc gia tri cua mot thanh ghi.
+;Tham Bien   :   addr    :   Dia chi cua thanh ghi.
+;Tra Ve      :    Gia tri doc duoc khi gui ma lenh.
+;********************************************************************************/
+;uint8_t CC1101_ReadReg(uint8_t addr)
+; 0001 0178 {
+;PCODE: $0000020A VOL: 0
+;PCODE: $0000020B VOL: 0
+; 0001 0179     uint8_t x;
+; 0001 017A     delay_us(5);//wait(0.000005);
+;PCODE: $0000020C VOL: 0
+;	addr -> Y+1
+;	x -> R17
+;PCODE: $0000020D VOL: 0
+; 0001 017B     CC1101_CS = 0;
+;PCODE: $0000020E VOL: 0
+;PCODE: $0000020F VOL: 0
+;PCODE: $00000210 VOL: 0
+; 0001 017C     delay_us(2);//(0.000002);
+;PCODE: $00000211 VOL: 0
+; 0001 017D     while (CC1101_MISO);
+;PCODE: $00000212 VOL: 0
+;PCODE: $00000213 VOL: 0
+;PCODE: $00000214 VOL: 0
+;PCODE: $00000215 VOL: 0
+;PCODE: $00000216 VOL: 0
+;PCODE: $00000217 VOL: 0
+;PCODE: $00000218 VOL: 0
+; 0001 017E     SPI_SOFT_ReadWrite(addr | READ_SINGLE);
+;PCODE: $00000219 VOL: 0
+;PCODE: $0000021A VOL: 0
+; 0001 017F     x = SPI_SOFT_ReadWrite(0);
+;PCODE: $0000021B VOL: 0
+;PCODE: $0000021C VOL: 0
+;PCODE: $0000021D VOL: 0
+; 0001 0180     delay_us(2);
+;PCODE: $0000021E VOL: 0
+;PCODE: $0000021F VOL: 0
+; 0001 0181     CC1101_CS = 1;
+;PCODE: $00000220 VOL: 0
+;PCODE: $00000221 VOL: 0
+;PCODE: $00000222 VOL: 0
+; 0001 0182     return x;
+;PCODE: $00000223 VOL: 0
+;PCODE: $00000224 VOL: 0
+;PCODE: $00000225 VOL: 0
+;PCODE: $00000226 VOL: 0
+;PCODE: $00000227 VOL: 0
+; 0001 0183 }
+;PCODE: $00000228 VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Doc lien tiep nhieu thanh ghi.
+;Tham Bien   :   addr    :   Dia chi cua thanh ghi dau tien.
+;                buffer  :   Bo dem luu tru gia tri cua cac thanh ghi.
+;                count   :   So luong thanh ghi can doc.
+;Tra Ve      :   Khong.
+;********************************************************************************/
+;void CC1101_ReadBurstReg(uint8_t addr, uint8_t *buffer, uint8_t count)
+; 0001 018C {
+;PCODE: $00000229 VOL: 0
+;PCODE: $0000022A VOL: 0
+; 0001 018D     uint8_t i;
+; 0001 018E     delay_us(5);
+;PCODE: $0000022B VOL: 0
+;	addr -> Y+4
+;	*buffer -> Y+2
+;	count -> Y+1
+;	i -> R17
+;PCODE: $0000022C VOL: 0
+; 0001 018F     CC1101_CS = 0;
+;PCODE: $0000022D VOL: 0
+;PCODE: $0000022E VOL: 0
+;PCODE: $0000022F VOL: 0
+; 0001 0190     delay_us(2);
+;PCODE: $00000230 VOL: 0
+; 0001 0191     while (CC1101_MISO);
+;PCODE: $00000231 VOL: 0
+;PCODE: $00000232 VOL: 0
+;PCODE: $00000233 VOL: 0
+;PCODE: $00000234 VOL: 0
+;PCODE: $00000235 VOL: 0
+;PCODE: $00000236 VOL: 0
+;PCODE: $00000237 VOL: 0
+; 0001 0192     SPI_SOFT_ReadWrite(addr | READ_BURST);
+;PCODE: $00000238 VOL: 0
+;PCODE: $00000239 VOL: 0
+; 0001 0193     for (i = 0; i < count; i++)
+;PCODE: $0000023A VOL: 0
+;PCODE: $0000023B VOL: 0
+;PCODE: $0000023C VOL: 0
+;PCODE: $0000023D VOL: 0
+;PCODE: $0000023E VOL: 0
+;PCODE: $0000023F VOL: 0
+;PCODE: $00000240 VOL: 0
+;PCODE: $00000241 VOL: 0
+;PCODE: $00000242 VOL: 0
+;PCODE: $00000243 VOL: 0
+; 0001 0194     {
+; 0001 0195         buffer[i] = SPI_SOFT_ReadWrite(0);
+;PCODE: $00000244 VOL: 0
+;PCODE: $00000245 VOL: 0
+;PCODE: $00000246 VOL: 0
+;PCODE: $00000247 VOL: 0
+;PCODE: $00000248 VOL: 0
+;PCODE: $00000249 VOL: 0
+;PCODE: $0000024A VOL: 0
+; 0001 0196     }
+;PCODE: $0000024B VOL: 0
+;PCODE: $0000024C VOL: 0
+;PCODE: $0000024D VOL: 0
+;PCODE: $0000024E VOL: 0
+;PCODE: $0000024F VOL: 0
+;PCODE: $00000250 VOL: 0
+; 0001 0197     delay_us(2);
+;PCODE: $00000251 VOL: 0
+; 0001 0198     CC1101_CS = 1;
+;PCODE: $00000252 VOL: 0
+;PCODE: $00000253 VOL: 0
+;PCODE: $00000254 VOL: 0
+; 0001 0199 }
+;PCODE: $00000255 VOL: 0
+;PCODE: $00000256 VOL: 0
+;PCODE: $00000257 VOL: 0
+;PCODE: $00000258 VOL: 0
+;PCODE: $00000259 VOL: 0
+;
+;/*******************************************************************************
+;Noi Dung    :   Viet vao thanh ghi cua CC1101.
+;Tham Bien   :   addr    :   Dia chi cua thanh ghi.
+;                value   :   Gia tri can ghi.
+;Tra Ve      :   Khong.
+;********************************************************************************/
+;void CC1101_WriteReg(uint8_t addr, uint8_t value)
+; 0001 01A2 {
+;PCODE: $0000025A VOL: 0
+;PCODE: $0000025B VOL: 0
+; 0001 01A3     delay_us(5);
+;	addr -> Y+1
+;	value -> Y+0
+;PCODE: $0000025C VOL: 0
+; 0001 01A4     CC1101_CS = 0;
+;PCODE: $0000025D VOL: 0
+;PCODE: $0000025E VOL: 0
+;PCODE: $0000025F VOL: 0
+; 0001 01A5     delay_us(2);
+;PCODE: $00000260 VOL: 0
+; 0001 01A6     while (CC1101_MISO);
+;PCODE: $00000261 VOL: 0
+;PCODE: $00000262 VOL: 0
+;PCODE: $00000263 VOL: 0
+;PCODE: $00000264 VOL: 0
+;PCODE: $00000265 VOL: 0
+;PCODE: $00000266 VOL: 0
+;PCODE: $00000267 VOL: 0
+; 0001 01A7     SPI_SOFT_ReadWrite(addr);
+;PCODE: $00000268 VOL: 0
+; 0001 01A8     SPI_SOFT_ReadWrite(value);
+;PCODE: $00000269 VOL: 0
+;PCODE: $0000026A VOL: 0
+; 0001 01A9     delay_us(2);
+;PCODE: $0000026B VOL: 0
+;PCODE: $0000026C VOL: 0
+; 0001 01AA     CC1101_CS = 1;
+;PCODE: $0000026D VOL: 0
+;PCODE: $0000026E VOL: 0
+;PCODE: $0000026F VOL: 0
+; 0001 01AB }
+;PCODE: $00000270 VOL: 0
+;PCODE: $00000271 VOL: 0
+;PCODE: $00000272 VOL: 0
+;
+;/*******************************************************************************
+;Noi Dung    :   Ghi lien tiep nhieu thanh ghi.
+;Tham Bien   :   addr    :   Dia chi cua thanh ghi dau tien.
+;                buffer  :   Bo dem luu tru gia tri cua can ghi vao cac thanh ghi.
+;                count   :   So luong thanh ghi can ghi.
+;Tra Ve      :   Khong.
+;********************************************************************************/
+;void CC1101_WriteBurstReg(uint8_t addr, uint8_t *buffer, uint8_t count)
+; 0001 01B5 {
+;PCODE: $00000273 VOL: 0
+;PCODE: $00000274 VOL: 0
+; 0001 01B6     uint8_t i;
+; 0001 01B7     delay_us(5);
+;PCODE: $00000275 VOL: 0
+;	addr -> Y+4
+;	*buffer -> Y+2
+;	count -> Y+1
+;	i -> R17
+;PCODE: $00000276 VOL: 0
+; 0001 01B8     CC1101_CS = 0;
+;PCODE: $00000277 VOL: 0
+;PCODE: $00000278 VOL: 0
+;PCODE: $00000279 VOL: 0
+; 0001 01B9     delay_us(2);
+;PCODE: $0000027A VOL: 0
+; 0001 01BA     while (CC1101_MISO);
+;PCODE: $0000027B VOL: 0
+;PCODE: $0000027C VOL: 0
+;PCODE: $0000027D VOL: 0
+;PCODE: $0000027E VOL: 0
+;PCODE: $0000027F VOL: 0
+;PCODE: $00000280 VOL: 0
+;PCODE: $00000281 VOL: 0
+; 0001 01BB     SPI_SOFT_ReadWrite(addr | WRITE_BURST);
+;PCODE: $00000282 VOL: 0
+;PCODE: $00000283 VOL: 0
+; 0001 01BC     for (i = 0; i < count; i++)
+;PCODE: $00000284 VOL: 0
+;PCODE: $00000285 VOL: 0
+;PCODE: $00000286 VOL: 0
+;PCODE: $00000287 VOL: 0
+;PCODE: $00000288 VOL: 0
+;PCODE: $00000289 VOL: 0
+;PCODE: $0000028A VOL: 0
+;PCODE: $0000028B VOL: 0
+;PCODE: $0000028C VOL: 0
+;PCODE: $0000028D VOL: 0
+; 0001 01BD     {
+; 0001 01BE         SPI_SOFT_ReadWrite(buffer[i]);
+;PCODE: $0000028E VOL: 0
+;PCODE: $0000028F VOL: 0
+;PCODE: $00000290 VOL: 0
+; 0001 01BF     }
+;PCODE: $00000291 VOL: 0
+;PCODE: $00000292 VOL: 0
+;PCODE: $00000293 VOL: 0
+;PCODE: $00000294 VOL: 0
+;PCODE: $00000295 VOL: 0
+;PCODE: $00000296 VOL: 0
+; 0001 01C0     delay_us(2);
+;PCODE: $00000297 VOL: 0
+; 0001 01C1     CC1101_CS = 1;
+;PCODE: $00000298 VOL: 0
+;PCODE: $00000299 VOL: 0
+;PCODE: $0000029A VOL: 0
+; 0001 01C2 }
+;PCODE: $0000029B VOL: 0
+;PCODE: $0000029C VOL: 0
+;PCODE: $0000029D VOL: 0
+;PCODE: $0000029E VOL: 0
+;PCODE: $0000029F VOL: 0
+;/*******************************************************************************
+;Noi Dung    :   Doc gia tri RSSI dua tren goi tin nhan duoc moi nhat.
+;Tham Bien   :   Khong.
+;Tra Ve      :   gia tri RSSI.
+;********************************************************************************/
+;uint8_t CC1101_RdRSSI(void)

@@ -1,0 +1,18 @@
+#ifndef _DEMO_DEF
+#define _DEMO_DEF
+
+#define USE_C06
+#define TIMER_UNIT_VALUE    5
+#define FIVE_SECONDS        1
+
+#define ONE_MINUTE_VALUE (60/TIMER_UNIT_VALUE)
+#define TIMER_UNIT  (TIMER_UNIT_VALUE * ONE_SECOND)
+
+    //Frequency ocsilator and baudrate of UART modules
+    #define CLOCK_FREQ 8000000ul
+
+    //Baudrate of UARTx module
+    #define BAUD_RATE 19200ul
+    #define BAUD_RATE_UART1 19200ul
+//#define ONE_SECOND ((CLOCK_FREQ/1000 ) / (SYMBOL_TO_TICK_RATE / 1000)) * 62500
+#endif

@@ -1,0 +1,4 @@
+build/default/production/UART/UART.o:  \
+	F:/PROJECT/MPLABX/RF315MHz/TranRF315.X/UART/UART.c  \
+	F:/PROJECT/MPLABX/RF315MHz/TranRF315.X/UART/UART.h  \
+

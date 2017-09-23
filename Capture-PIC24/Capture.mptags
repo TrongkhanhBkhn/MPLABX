@@ -1,0 +1,92 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+Capture1_config	D:\New folder\main.c	25;"	f	line:25	signature:(void)
+Capture1_config	D:\New folder\main.c	9;"	p	line:9	file:	signature:(void)
+Init_LCD	D:\New folder\lcd.h	34;"	p	line:34	signature:(void)
+Init_LCD	D:\New folder\lcd.h	57;"	f	line:57	signature:(void)
+Init_PORTS	D:\New folder\lcd.h	33;"	p	line:33	signature:(void)
+Init_PORTS	D:\New folder\lcd.h	47;"	f	line:47	signature:(void)
+LCD_4b2l::0x28	D:\New folder\lcd.h	26;"	d	line:26
+LCD_CMD	D:\New folder\lcd.h	36;"	p	line:36	signature:(unsigned char cmd)
+LCD_CMD	D:\New folder\lcd.h	77;"	f	line:77	signature:(unsigned char cmd)
+LCD_D4::LATDbits.LATD3	D:\New folder\lcd.h	11;"	d	line:11
+LCD_D5::LATDbits.LATD4	D:\New folder\lcd.h	12;"	d	line:12
+LCD_D6::LATDbits.LATD5	D:\New folder\lcd.h	13;"	d	line:13
+LCD_D7::LATDbits.LATD6	D:\New folder\lcd.h	14;"	d	line:14
+LCD_DATA	D:\New folder\lcd.h	37;"	p	line:37	signature:(unsigned char dat)
+LCD_DATA	D:\New folder\lcd.h	96;"	f	line:96	signature:(unsigned char dat)
+LCD_E::LATDbits.LATD2	D:\New folder\lcd.h	9;"	d	line:9
+LCD_IN_FLOAT	D:\New folder\lcd.h	180;"	f	line:180	signature:( float d)
+LCD_IN_FLOAT	D:\New folder\lcd.h	42;"	p	line:42	signature:( float d)
+LCD_IN_INTER	D:\New folder\lcd.h	140;"	f	line:140	signature:(unsigned int d)
+LCD_IN_INTER	D:\New folder\lcd.h	41;"	p	line:41	signature:(unsigned int d)
+LCD_OK	D:\New folder\lcd.h	35;"	p	line:35	signature:(void)
+LCD_OK	D:\New folder\lcd.h	70;"	f	line:70	signature:(void)
+LCD_RS::LATDbits.LATD0	D:\New folder\lcd.h	7;"	d	line:7
+LCD_RW::LATDbits.LATD1	D:\New folder\lcd.h	8;"	d	line:8
+LCD_clear::0x01	D:\New folder\lcd.h	18;"	d	line:18
+LCD_home::0x02	D:\New folder\lcd.h	19;"	d	line:19
+LCD_homeL1::0x80	D:\New folder\lcd.h	27;"	d	line:27
+LCD_homeL2::0xC0	D:\New folder\lcd.h	28;"	d	line:28
+LCD_normal::0x06	D:\New folder\lcd.h	20;"	d	line:20
+LCD_normal_s::0x07	D:\New folder\lcd.h	21;"	d	line:21
+LCD_off::0x08	D:\New folder\lcd.h	22;"	d	line:22
+LCD_on::0x0C	D:\New folder\lcd.h	23;"	d	line:23
+LCD_on_blink::0x0F	D:\New folder\lcd.h	25;"	d	line:25
+LCD_on_crsr::0x0E	D:\New folder\lcd.h	24;"	d	line:24
+Timer2_config	D:\New folder\main.c	10;"	p	line:10	file:	signature:(void)
+Timer2_config	D:\New folder\main.c	41;"	f	line:41	signature:(void)
+_IC1Interrupt	D:\New folder\main.c	83;"	f	line:83	signature:(void)
+_T2Interrupt	D:\New folder\main.c	91;"	f	line:91	signature:(void)
+__LCD_H	D:\New folder\lcd.h	2;"	d	line:2
+a	D:\New folder\lcd.h	156;"	l	line:156
+address	D:\New folder\lcd.h	133;"	l	line:133
+b	D:\New folder\lcd.h	156;"	l	line:156
+c	D:\New folder\lcd.h	156;"	l	line:156
+ch	D:\New folder\lcd.h	182;"	l	line:182
+e	D:\New folder\lcd.h	183;"	l	line:183
+frequence	D:\New folder\main.c	13;"	v	line:13
+i	D:\New folder\lcd.h	142;"	l	line:142
+i	D:\New folder\lcd.h	183;"	l	line:183
+j	D:\New folder\lcd.h	142;"	l	line:142
+j	D:\New folder\lcd.h	183;"	l	line:183
+k	D:\New folder\lcd.h	142;"	l	line:142
+k	D:\New folder\lcd.h	183;"	l	line:183
+khoi_tao	D:\New folder\lcd.h	40;"	p	line:40	signature:(void)
+l	D:\New folder\lcd.h	142;"	l	line:142
+l	D:\New folder\lcd.h	183;"	l	line:183
+l	D:\New folder\lcd.h	199;"	l	line:199
+lcd_busy::LATDbits.LATD7	D:\New folder\lcd.h	15;"	d	line:15
+lcd_clear	D:\New folder\lcd.h	115;"	f	line:115	signature:(void)
+lcd_clear	D:\New folder\lcd.h	43;"	p	line:43	signature:(void)
+lcd_gotoxy	D:\New folder\lcd.h	131;"	f	line:131	signature:(int x, int y)
+lcd_gotoxy	D:\New folder\lcd.h	39;"	p	line:39	signature:(int x, int y)
+lcd_int	D:\New folder\lcd.h	154;"	f	line:154	signature:(int val)
+lcd_int	D:\New folder\lcd.h	44;"	p	line:44	signature:(int val)
+lcd_line_one::0x00	D:\New folder\lcd.h	30;"	d	line:30
+lcd_line_two::0x40	D:\New folder\lcd.h	29;"	d	line:29
+lcd_putstr	D:\New folder\lcd.h	119;"	f	line:119	signature:(char *buffer)
+lcd_putstr	D:\New folder\lcd.h	38;"	p	line:38	signature:(char *buffer)
+m	D:\New folder\lcd.h	142;"	l	line:142
+m	D:\New folder\lcd.h	199;"	l	line:199
+main	D:\New folder\main.c	54;"	f	line:54	signature:(void)
+mapping_pin	D:\New folder\main.c	14;"	f	line:14	signature:(void)
+mapping_pin	D:\New folder\main.c	8;"	p	line:8	file:	signature:(void)
+n	D:\New folder\lcd.h	199;"	l	line:199
+p	D:\New folder\lcd.h	199;"	l	line:199
+past_count	D:\New folder\main.c	11;"	v	line:11
+pre_count	D:\New folder\main.c	11;"	v	line:11
+q	D:\New folder\lcd.h	199;"	l	line:199
+str1	D:\New folder\main.c	12;"	v	line:12
+temp	D:\New folder\main.c	11;"	v	line:11
+temp1	D:\New folder\lcd.h	79;"	l	line:79
+temp2	D:\New folder\lcd.h	98;"	l	line:98
+timer_lcd	D:\New folder\lcd.h	197;"	f	line:197	signature:(long k)
+timer_lcd	D:\New folder\lcd.h	45;"	p	line:45	signature:(long k)
+u	D:\New folder\lcd.h	72;"	l	line:72

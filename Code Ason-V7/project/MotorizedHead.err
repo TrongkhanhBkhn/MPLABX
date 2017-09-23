@@ -1,0 +1,3 @@
+Error[1027] F:\MotorizedHeadP18F26K20.X\lcd.h 22 : unable to locate 'htc.h'
+Error[1027] F:\MotorizedHeadP18F26K20.X\MotorizedHead.c 3 : unable to locate 'plib/pwm.h'
+Error[1027] F:\MotorizedHeadP18F26K20.X\MotorizedHead.c 9 : unable to locate 'xc.h'

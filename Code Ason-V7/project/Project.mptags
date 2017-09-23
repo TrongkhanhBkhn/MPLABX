@@ -1,0 +1,149 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+CharToNumber	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	182;"	f	line:182	signature:(char param_char)
+CharToNumber	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	78;"	p	line:78	file:	signature:(char param_char)
+ControlRemote	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	229;"	f	line:229	signature:(void)
+ControlRemote	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	75;"	p	line:75	file:	signature:(void)
+Display	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	400;"	f	line:400	signature:(void)
+Display	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	76;"	p	line:76	file:	signature:(void)
+Func_interrupt	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	79;"	p	line:79	file:	signature:(void)
+Func_interrupt	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	884;"	f	line:884	signature:(void)
+Init_LCD	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	33;"	p	line:33	signature:(void)
+Init_LCD	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	57;"	f	line:57	signature:(void)
+Init_PORTS	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	32;"	p	line:32	signature:(void)
+Init_PORTS	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	47;"	f	line:47	signature:(void)
+Init_Rec_UART	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	13;"	p	line:13	signature:(void)
+Init_Rec_UART	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	51;"	f	line:51	signature:(void)
+Init_Tran_UART	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	14;"	p	line:14	signature:(void)
+Init_Tran_UART	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	45;"	f	line:45	signature:(void)
+LCD_4b2l::0x28	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	25;"	d	line:25
+LCD_CMD	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	35;"	p	line:35	signature:(unsigned char cmd)
+LCD_CMD	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	77;"	f	line:77	signature:(unsigned char cmd)
+LCD_D4::LATBbits.LATB4	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	11;"	d	line:11
+LCD_D5::LATBbits.LATB5	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	12;"	d	line:12
+LCD_D6::LATBbits.LATB6	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	13;"	d	line:13
+LCD_D7::LATBbits.LATB7	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	14;"	d	line:14
+LCD_DATA	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	36;"	p	line:36	signature:(unsigned char dat)
+LCD_DATA	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	96;"	f	line:96	signature:(unsigned char dat)
+LCD_E::LATAbits.LATA2	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	9;"	d	line:9
+LCD_IN_FLOAT	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	172;"	f	line:172	signature:( float d)
+LCD_IN_FLOAT	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	41;"	p	line:41	signature:( float d)
+LCD_IN_INTER	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	144;"	f	line:144	signature:(unsigned int d)
+LCD_IN_INTER	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	40;"	p	line:40	signature:(unsigned int d)
+LCD_OK	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	34;"	p	line:34	signature:(void)
+LCD_OK	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	70;"	f	line:70	signature:(void)
+LCD_RS::LATAbits.LATA0	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	7;"	d	line:7
+LCD_RW::LATAbits.LATA1	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	8;"	d	line:8
+LCD_clear::0x01	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	17;"	d	line:17
+LCD_home::0x02	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	18;"	d	line:18
+LCD_homeL1::0x80	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	26;"	d	line:26
+LCD_homeL2::0xC0	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	27;"	d	line:27
+LCD_normal::0x06	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	19;"	d	line:19
+LCD_normal_s::0x07	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	20;"	d	line:20
+LCD_off::0x08	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	21;"	d	line:21
+LCD_on::0x0C	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	22;"	d	line:22
+LCD_on_blink::0x0F	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	24;"	d	line:24
+LCD_on_crsr::0x0E	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	23;"	d	line:23
+LED1::LATAbits.LATA4	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	63;"	d	line:63	file:
+LED2::LATAbits.LATA5	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	64;"	d	line:64	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	205;"	f	line:205	signature:(unsigned int param)
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	429;"	p	line:429	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	444;"	p	line:444	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	452;"	p	line:452	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	475;"	p	line:475	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	490;"	p	line:490	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	500;"	p	line:500	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	680;"	p	line:680	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	695;"	p	line:695	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	705;"	p	line:705	file:
+NumberToChar	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	77;"	p	line:77	file:	signature:(unsigned int param)
+OFF::0	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	70;"	d	line:70	file:
+ON::1	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	69;"	d	line:69	file:
+OSC_config	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	174;"	f	line:174	signature:(void)
+OSC_config	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	73;"	p	line:73	file:	signature:(void)
+TMR2_period::249	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	62;"	d	line:62	file:
+UART_Config	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	16;"	f	line:16	signature:(int SPBRG_SET)
+UART_Config	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	6;"	p	line:6	signature:(int SPBRG_SET)
+UART_isr	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	11;"	p	line:11	signature:()
+Wait	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	80;"	p	line:80	file:	signature:(unsigned int delay)
+__LCD_H	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	2;"	d	line:2
+__UART_H	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	2;"	d	line:2
+address	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	137;"	l	line:137
+b	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	107;"	v	line:107
+c	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	108;"	v	line:108
+ch	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	174;"	l	line:174
+character	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	207;"	l	line:207
+data_uart	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	104;"	v	line:104
+duty_cycles1	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	92;"	v	line:92
+duty_cycles10	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	101;"	v	line:101
+duty_cycles15	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	102;"	v	line:102
+duty_cycles2	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	93;"	v	line:93
+duty_cycles3	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	94;"	v	line:94
+duty_cycles4	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	95;"	v	line:95
+duty_cycles5	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	96;"	v	line:96
+duty_cycles6	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	97;"	v	line:97
+duty_cycles7	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	98;"	v	line:98
+duty_cycles8	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	99;"	v	line:99
+duty_cycles9	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	100;"	v	line:100
+e	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	175;"	l	line:175
+i	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	106;"	v	line:106
+i	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	146;"	l	line:146
+i	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	175;"	l	line:175
+interrupt_vector	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	876;"	f	line:876	signature:(void)
+j	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	106;"	v	line:106
+j	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	146;"	l	line:146
+j	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	175;"	l	line:175
+k	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	146;"	l	line:146
+k	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	175;"	l	line:175
+khoi_tao	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	39;"	p	line:39	signature:(void)
+l	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	146;"	l	line:146
+l	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	175;"	l	line:175
+lcd_clear	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	115;"	f	line:115	signature:(void)
+lcd_clear	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	42;"	p	line:42	signature:(void)
+lcd_gotoxy	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	135;"	f	line:135	signature:(int x, int y)
+lcd_gotoxy	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	38;"	p	line:38	signature:(int x, int y)
+lcd_int	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	156;"	f	line:156	signature:(char a)
+lcd_int	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	43;"	p	line:43	signature:(char a)
+lcd_line_one::0x00	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	29;"	d	line:29
+lcd_line_two::0x40	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	28;"	d	line:28
+lcd_putch	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	119;"	f	line:119	signature:(char data)
+lcd_putch	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	44;"	p	line:44	signature:(char data)
+lcd_putstr	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	123;"	f	line:123	signature:(char *buffer)
+lcd_putstr	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	37;"	p	line:37	signature:(char *buffer)
+main	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	111;"	f	line:111	signature:(void)
+number	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	184;"	l	line:184
+period	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	113;"	l	line:113
+set_mode	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	403;"	l	line:403
+spin_times	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	402;"	l	line:402
+str1	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	81;"	v	line:81
+str10	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	90;"	v	line:90
+str2	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	82;"	v	line:82
+str3	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	83;"	v	line:83
+str4	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	84;"	v	line:84
+str5	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	85;"	v	line:85
+str6	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	86;"	v	line:86
+str7	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	87;"	v	line:87
+str8	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	88;"	v	line:88
+str9	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	89;"	v	line:89
+temp	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	105;"	v	line:105
+temp1	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	79;"	l	line:79
+temp2	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	98;"	l	line:98
+u	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	72;"	l	line:72
+uart_getc	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	75;"	f	line:75	signature:()
+uart_getc	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	9;"	p	line:9	signature:()
+uart_gets	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	10;"	p	line:10	signature:(char *s)
+uart_gets	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	80;"	f	line:80	signature:(char *s)
+uart_interrupt	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	12;"	p	line:12	signature:()
+uart_putc	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	62;"	f	line:62	signature:(char c)
+uart_putc	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	8;"	p	line:8	signature:(char c)
+uart_puts	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	67;"	f	line:67	signature:(const char *s)
+uart_puts	C:\Users\KHANH\Desktop\Code Ason-V6\uart.h	7;"	p	line:7	signature:(const char *s)
+warning	C:\Users\KHANH\Desktop\Code Ason-V6\fmain.c	91;"	v	line:91
+x	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	158;"	l	line:158
+y	C:\Users\KHANH\Desktop\Code Ason-V6\lcd.h	158;"	l	line:158
